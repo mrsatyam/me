@@ -3908,6 +3908,7 @@ input[type=button].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  color:black;
 }
 .nav-link:hover, .nav-link:focus {
   text-decoration: none;
@@ -10093,7 +10094,7 @@ img::-moz-selection {
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.95rem;
-  color: #fff;
+  color: black;
   letter-spacing: 0.0625em;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
@@ -10136,15 +10137,29 @@ img::-moz-selection {
   }
 }
 header.masthead {
+  position: relative;
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
-  color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
+  color: #hff;
+  background: url("../assets/img/header-bg.jpg") no-repeat center center;
   background-size: cover;
+}
+
+header.masthead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity here */
+  z-index: 1;
+}
+
+header.masthead * {
+  position: relative;
+  z-index: 2;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
